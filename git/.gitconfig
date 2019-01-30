@@ -1,0 +1,9 @@
+[user]
+	name = jartigag
+	email = jartigag@pm.me
+[core]
+	editor = vim
+[color]
+	ui = auto
+[alias]
+	gitlog = log --graph --oneline --decorate --all
