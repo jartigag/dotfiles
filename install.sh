@@ -1,4 +1,6 @@
-uthor: Javier Artiga Garijo (v0.5)
+#!/bin/bash
+# -*- coding: utf-8 -*-
+#author: @jartigag
 #date: 02/02/2019
 #version: 0.1 
 #
