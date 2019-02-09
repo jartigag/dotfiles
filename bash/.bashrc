@@ -47,19 +47,19 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -88,8 +88,8 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
+alias ll='ls -lh'
+alias la='ls -Ah'
 alias l='ls -CF'
 
 # Alias definitions.
@@ -115,5 +115,17 @@ fi
 # this allows ifconfig without sudo:
 export PATH=$PATH:/sbin
 
-# naudit:
-export PATH=$PATH:$HOME/svn/utils
+## android ##
+export ANDROID_HOME="/usr/lib/android-sdk/"
+export PATH="${PATH}:${ANDROID_HOME}tools/bin:${ANDROID_HOME}tools/bin"
+
+# emulator: #
+export PATH="${PATH}:${ANDROID_HOME}tools:${ANDROID_HOME}tools"
+
+## flutter ##
+export PATH=$PATH:/home/javi/flutter/bin
+
+## node without sudo ##
+export PATH="$PATH:$HOME/npm/bin"
+export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
+
