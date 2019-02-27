@@ -6,6 +6,7 @@ alias gitpl='git pull origin master'
 alias gitrs='git reset --soft HEAD~1'
 alias open='xdg-open'
 alias gitst='git status'
+alias gitdf='git diff'
 function alarm() { sleep $(( $(date -d "$1" +%s) - $(date +%s) )); mplayer ~/alarms/beep-bop.mp3 > /dev/null 2>&1; }
 function lb() {
 	vim ~/logbook/$(date '+%Y-%m-%d').md
