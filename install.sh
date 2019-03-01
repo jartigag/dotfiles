@@ -27,3 +27,6 @@ do
 		done
 
 		echo "done."
+
+# anacron:
+# echo "rsync -a --ignore-existing naudit:/home/javier/logbook/* /home/javi/logbook-naudit/" | sudo tee -a /etc/anacrontab > /dev/null

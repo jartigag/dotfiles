@@ -14,3 +14,6 @@ function lb() {
 md () {
 	pandoc $1 | lynx -stdin
 }
+bk () {
+	cp $1 $1.bak
+}
