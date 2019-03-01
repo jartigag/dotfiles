@@ -7,8 +7,8 @@ alias gitrs='git reset --soft HEAD~1'
 alias open='xdg-open'
 alias gitst='git status'
 alias gitdf='git diff'
-function alarm() { sleep $(( $(date -d "$1" +%s) - $(date +%s) )); mplayer ~/alarms/beep-bop.mp3 > /dev/null 2>&1; }
-function lb() {
+alarm() { sleep $(( $(date -d "$1" +%s) - $(date +%s) )); mplayer ~/alarms/beep-bop.mp3 > /dev/null 2>&1; }
+lb() {
 	vim ~/logbook/$(date '+%Y-%m-%d').md
 }
 md () {
@@ -16,4 +16,7 @@ md () {
 }
 bk () {
 	cp $1 $1.bak
+}
+mdt () {
+       pandoc ~/logbook/$(date '+%Y-%m-%d').md | lynx -stdin
 }
