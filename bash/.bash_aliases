@@ -20,3 +20,9 @@ bk () {
 mdt () {
        pandoc ~/logbook/$(date '+%Y-%m-%d').md | lynx -stdin
 }
+mdy () {
+       pandoc ~/logbook/$(date -d 'yesterday' '+%Y-%m-%d').md | lynx -stdin
+}
+tmt () {
+	python3 ~/logbook/timeTracker/timeTracker-parser.py
+}
