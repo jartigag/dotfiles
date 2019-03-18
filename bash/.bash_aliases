@@ -24,5 +24,8 @@ mdy () {
        pandoc ~/logbook/$(date -d 'yesterday' '+%Y-%m-%d').md | lynx -stdin
 }
 tmt () {
-	python3 ~/logbook/timeTracker/timeTracker-parser.py
+	python3 ~/ttymetracker/ttymetracker.py ~/logbook -m todo-list
+}
+tmtl () {
+        python3 ~/ttymetracker/ttymetracker.py ~/logbook -l
 }
