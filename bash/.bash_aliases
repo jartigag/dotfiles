@@ -18,10 +18,10 @@ bk () {
 	cp $1 $1.bak
 }
 mdt () {
-       pandoc ~/logbook/$(date '+%Y-%m-%d').md | lynx -stdin
+	pandoc ~/logbook/$(date '+%Y-%m-%d').md | lynx -stdin
 }
 mdy () {
-       pandoc ~/logbook/$(date -d 'yesterday' '+%Y-%m-%d').md | lynx -stdin
+	pandoc ~/logbook/$(date -d 'yesterday' '+%Y-%m-%d').md | lynx -stdin
 }
 tmt () {
 	python3 ~/ttymetracker/ttymetracker.py ~/logbook -m todo-list
