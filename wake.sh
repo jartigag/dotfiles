@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #author: @jartigag
 #date: 2019-05-05
-#version: 0.1
+#version: 0.2
 #
 # it uses a Wake-on-LAN utility (`sudo apt install etherwake`)
 # to turn a host and login into it with ssh.
@@ -26,9 +26,9 @@ sudo etherwake -i eth0 $mac
 echo "$mac is waking.."
 
 echo "waiting for $mac for $n_secs seconds.."
-sleep $n_secs/2
+sleep $(($n_secs/2))
 echo "(es de despertar perezoso, ya ves tú..😜)"
-sleep $n_secs/2
+sleep $(($n_secs/2))
 
 echo "pinging to $ip $n_pings times.."
 
