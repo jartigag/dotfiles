@@ -16,3 +16,6 @@ set mouse=a
 
 " don't allow broken words at the end of the line
 set linebreak
+
+" set tab = 4 spaces
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4
