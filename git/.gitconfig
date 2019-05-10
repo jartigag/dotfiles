@@ -3,7 +3,6 @@
 	email = jartigag@pm.me
 [core]
 	editor = vim
-	autocrlf = true
 [color]
 	ui = auto
 [alias]
