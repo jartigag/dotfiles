@@ -1,0 +1,109 @@
+[KDE Keyboard Layout Switcher]
+Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Cambiar a la siguiente distribución del teclado
+_k_friendly_name=KDE Daemon
+
+[kcm_touchpad]
+Disable Touchpad=Touchpad Off,Touchpad Off,Desactivar el panel táctil
+Enable Touchpad=Touchpad On,Touchpad On,Activar el panel táctil
+Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Conmutar el panel táctil
+_k_friendly_name=KDE Daemon
+
+[kded5]
+Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Disminuir el brillo del teclado
+Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Disminuir el brillo de la pantalla
+Hibernate=Hibernate,Hibernate,Hibernar
+Increase Keyboard Brightness=Keyboard Brightness Up,Keyboard Brightness Up,Aumentar el brillo del teclado
+Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Aumentar el brillo de la pantalla
+PowerOff=,Power Off,Apagar
+Show System Activity=Ctrl+Esc,Ctrl+Esc,Mostrar la actividad del sistema
+Sleep=Sleep,Sleep,Suspender
+Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Conmutar la luz trasera del teclado
+_k_friendly_name=Gestión de energía
+display=Display\tMeta+P,Display\tMeta+P,Cambiar pantalla
+
+[khotkeys]
+_k_friendly_name=KDE Daemon
+{03913855-417f-4237-b2c6-f6912e1a3dd1}=Alt+D,none,Dolphin
+{10db4c94-810d-41af-aaa0-0cf6275dd0c7}=Ctrl+Alt+T,none,Konsole
+{277165d4-47e5-4749-8c47-a553c56dc0e7}=Alt+Shift+S,none,rm spotify-winID
+{2924c74a-27e7-4c6d-8e35-388eb758e1a9}=Alt+X,none,SublimeText
+{2961c4a2-4b50-4f7f-a4ca-984eb1bb8792}=Alt+T,none,Telegram
+{58810313-09b9-4415-8734-cb11e2dd358b}=Alt+P,none,SystemSettings
+{9cee81a9-9730-45e9-8ac3-9b24e524a08f}=Alt+S,none,bring spotify to front
+{bc821288-0cd2-413c-9f8c-5727c06b8063}=Alt+Y,none,Lyx
+{bd77d89a-8adc-4906-93d4-e546c8004b45}=Alt+A,none,bring tmt to front
+{c23d4fe8-376f-4b10-8a8f-7459343aa0e2}=Alt+Z,none,KeepassXC
+{cb3fe2bc-d618-4a15-9f37-3b0683b262dc}=Alt+C,none,Chromium
+{cf13a80a-5c96-436c-9a06-40e831052eae}=Alt+V,none,VirtualBox
+{e59e8635-f5b5-41c2-87f8-fe03f2a18686}=Alt+E,none,Eclipse
+{f995ddc8-adda-4b6f-a8ed-2b60dc4a936e}=Alt+M,none,chromium
+{fb0487f5-f91c-4c5b-bb30-27df8af82db3}=Alt+Shift+A,none,rm tmt-winID
+{fc0e45f8-036b-4417-b5bd-6809e5561232}=Meta+Alt+C,none,chromium --incog
+{fe17e32c-8f77-49b0-a021-550c9a899aa8}=Alt+G,none,Gimp
+{fedf0eb8-d519-4c8b-838a-992d16da80e5}=Alt+F,none,Firefox
+
+[kmix]
+_k_friendly_name=Volumen del sonido
+decrease_microphone_volume=Microphone Volume Down,Microphone Volume Down,Bajar el volumen del micrófono
+decrease_volume=Volume Down,Volume Down,Bajar el volumen
+increase_microphone_volume=Microphone Volume Up,Microphone Volume Up,Subir el volumen del micrófono
+increase_volume=Volume Up,Volume Up,Subir el volumen
+mic_mute=Microphone Mute,Microphone Mute,Silenciar el micrófono
+mute=Volume Mute,Volume Mute,Silenciar
+
+[krunner]
+_k_friendly_name=Ejecutar orden
+run command=Alt+Space\tAlt+F2\t,Alt+Space,Ejecutar orden
+run command on clipboard contents=Alt+Shift+F2,Alt+Shift+F2,Ejecutar orden en el contenido del portapapeles
+
+[ksmserver]
+Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,none,Apagar sin confirmación
+Lock Session=Power Off,Ctrl+Alt+L\tScreensaver,Bloquear la sesión
+Log Out=Ctrl+Alt+Del,none,Cerrar la sesión
+Log Out Without Confirmation=Ctrl+Alt+Shift+Del,none,Cerrar la sesión sin confirmación
+Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp,none,Reiniciar sin confirmación
+_k_friendly_name=ksmserver
+
+[kwin]
+Switch Window Down=,Meta+Alt+Down,Cambiar a la ventana anterior
+Switch Window Left=,Meta+Alt+Left,Cambiar a la ventana a la izquierda
+Switch Window Right=,Meta+Alt+Right,Cambiar a la ventana a la derecha
+Switch Window Up=,Meta+Alt+Up,Cambiar a la ventana superior
+Toggle Window Raise/Lower=,none,Conmutar pasar la ventana al frente/atrás
+Walk Through Windows=Alt+Tab,none,Recorrer las ventanas
+Walk Through Windows (Reverse)=Alt+Shift+Backtab,none,Recorrer las ventanas (hacia atrás)
+Walk Through Windows of Current Application=Alt+`,none,Recorrer las ventanas de la aplicación actual
+Walk Through Windows of Current Application (Reverse)=Alt+~,none,Recorrer las ventanas de la aplicación actual (hacia atrás)
+Window Close=Alt+Q,Alt+F4,Cerrar la ventana
+Window Fullscreen=Meta+F,none,Ventana en pantalla completa
+Window Grow Horizontal=Ctrl+Alt+Right,none,Empaquetar y extender la ventana horizontalmente
+Window Grow Vertical=Ctrl+Alt+Up,none,Empaquetar y extender la ventana verticalmente
+Window Maximize=Meta+Up,none,Maximizar la ventana
+Window Maximize Horizontal=,none,Maximizar la ventana horizontalmente
+Window Maximize Vertical=,none,Maximizar la ventana verticalmente
+Window Minimize=Meta+Down,none,Minimizar la ventana
+Window Operations Menu=Alt+F3,Alt+F3,Menú de operaciones de la ventana
+Window Pack Down=Meta+Alt+Down,none,Empaquetar la ventana abajo
+Window Pack Left=Meta+Alt+Left,none,Empaquetar la ventana a la izquierda
+Window Pack Right=Meta+Alt+Right,none,Empaquetar la ventana a la derecha
+Window Pack Up=Meta+Alt+Up,none,Empaquetar la ventana arriba
+Window Quick Tile Bottom Left=Meta+Ctrl+Left,none,Situar la ventana en mosaico en la parte inferior izquierda
+Window Quick Tile Bottom Right=Meta+Ctrl+Right,none,Situar la ventana en mosaico en la parte inferior derecha
+Window Quick Tile Left=Meta+Left,none,Situar la ventana en mosaico a la izquierda
+Window Quick Tile Right=Meta+Right,none,Situar la ventana en mosaico a la derecha
+Window Quick Tile Top Left=Meta+Shift+Left,none,Situar la ventana en mosaico en la parte superior izquierda
+Window Quick Tile Top Right=Meta+Shift+Right,none,Situar la ventana en mosaico en la parte superior derecha
+Window Resize=Meta+X,none,Redimensionar la ventana
+Window Shrink Horizontal=Ctrl+Alt+Left,none,Empaquetar y encoger la ventana horizontalmente
+Window Shrink Vertical=Ctrl+Alt+Down,none,Empaquetar y encoger la ventana verticalmente
+_k_friendly_name=KWin
+view_actual_size=Meta+0,Meta+0,Tamaño real
+view_zoom_in=Meta++,Meta+=,Ampliar
+view_zoom_out=Meta+-,Meta+-,Reducir
+
+[mediacontrol]
+_k_friendly_name=Controlador multimedia
+nextmedia=Media Next,Media Next,Siguiente reproducción multimedia
+playpausemedia=Media Play,Media Play,Reproducir/pausar la reproducción multimedia
+previousmedia=Media Previous,Media Previous,Anterior reproducción multimedia
+stopmedia=Media Stop,Media Stop,Detener la reproducción multimedia
