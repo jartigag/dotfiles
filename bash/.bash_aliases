@@ -8,6 +8,7 @@ alias gitrs='git reset --soft HEAD~1'
 alias open='xdg-open'
 alias gitst='git status'
 alias gitdf='git diff'
+alias gitch='git checkout -- .'
 alias aptl='apt list --upgradable'
 alarm() { sleep $(( $(date -d "$1" +%s) - $(date +%s) )); mplayer ~/alarms/beep-bop.mp3 > /dev/null 2>&1; }
 lb() {
