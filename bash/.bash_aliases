@@ -45,3 +45,7 @@ tmts () {
     echo -ne "\033]30;tmts ⏱🡅\007"
     python3 ~/ttymetracker/ttymetracker.py ~/$logbook2 -m sharepoint -a ~/ttymetracker/ttymetracker_aliases.cfg
 }
+tmtp () {
+    python3 ~/ttymetracker/ttymetracker.py ~/$logbook2 --percent -a ~/ttymetracker/ttymetracker_aliases.cfg
+}
+alias mouse='sudo sh -c "echo -n \"exps\" > /sys/bus/serio/devices/serio2/protocol"' #https://slimbook.es/foro/question/2802-problema-touchpad-al-despertar-de-la-suspension
