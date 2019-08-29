@@ -19,6 +19,7 @@ if [ ! -f $widFile ]; then
         while [ -z "$flagDone" ]
         do
                 flagDone=`wmctrl -l | grep $windowTitle | cut -d " " -f1`
+                sleep 1
         done
         echo "$flagDone" > $widFile 
 fi
