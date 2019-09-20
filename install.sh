@@ -1,10 +1,10 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
 #author: @jartigag
-#date: 02/02/2019
-#version: 0.1 
+#date: 20/09/2019
+#version: 0.2
 #
-# install my configuration files (dotfiles), just with symbolic links 
+# install my configuration files (dotfiles), just with symbolic links
 # usage: bash install.sh
 
 echo "let's install some dotfiles.."
@@ -19,11 +19,11 @@ echo "let's install some dotfiles.."
 dotfiles=($(find `pwd` -type f -name ".*"))
 
 for i in ${!dotfiles[@]}
-	#The keys are accessed using an exclamation point: ${!array[@]}, 
-	#the values are accessed using ${array[@]}
+        #The keys are accessed using an exclamation point: ${!array[@]},
+        #the values are accessed using ${array[@]}
 do
-	        echo "ln -sf ${dotfiles[$i]} $HOME"
-		        ln -sf ${dotfiles[$i]} $HOME
-		done
+                echo "cp ${dotfiles[$i]} $HOME"
+                        cp ${dotfiles[$i]} $HOME
+                done
 
-		echo "done."
+                echo "done."
