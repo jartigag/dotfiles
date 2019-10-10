@@ -4,8 +4,12 @@
 #date: 20/09/2019
 #version: 0.2
 #
-# install my configuration files (dotfiles), just with symbolic links
+# install my configuration files (dotfiles)
 # usage: bash install.sh
+#
+# minimals reminder:
+# sudo apt install git vim curl
+# curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "let's install some dotfiles.."
 

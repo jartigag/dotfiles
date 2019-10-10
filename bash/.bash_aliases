@@ -1,4 +1,4 @@
-source ~/.bash_vars # custom variables "logbook1" and "logbook2" are in this file ~/.bash_vars
+#source ~/.bash_vars # custom variables "logbook1" and "logbook2" are in this file ~/.bash_vars
 alias duh='du -h --max-depth=1 | sort -hr'
 alias gitlog='git log --graph --decorate --all'
 function gitcl() { git clone $1 && cd $(basename $_ .git); }
