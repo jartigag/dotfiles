@@ -10,7 +10,7 @@ alias gitst='git status'
 alias gitdf='git diff'
 alias gitch='git checkout -- .'
 alias aptl='apt list --upgradable'
-alias aptu='sudo apt update'
+alias aptu='sudo apt upgrade'
 alarm() { sleep $(( $(date -d "$1" +%s) - $(date +%s) )); mplayer ~/alarms/beep-bop.mp3 > /dev/null 2>&1; }
 lb() {
     echo -ne "\033]30;lb ✍️\007"
