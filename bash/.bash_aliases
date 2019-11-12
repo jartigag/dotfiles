@@ -1,16 +1,12 @@
 #source ~/.bash_vars # custom variables "logbook1" and "logbook2" are in this file ~/.bash_vars
 alias duh='du -h --max-depth=1 | sort -hr'
-alias gitlog='git log --graph --decorate --all'
 function gitcl() { git clone $1 && cd $(basename $_ .git); }
 function gitcm() { git add .; git commit -m "$1"; git push origin master; }
-alias gitpl='git pull origin master'
-alias gitrs='git reset --soft HEAD~1'
 alias open='xdg-open'
-alias gitst='git status'
-alias gitdf='git diff'
-alias gitch='git checkout -- .'
 alias aptl='apt list --upgradable'
 alias aptu='sudo apt upgrade'
+alias t1='tree -L 1'
+alias t2='tree -L 2'
 alarm() { sleep $(( $(date -d "$1" +%s) - $(date +%s) )); mplayer ~/alarms/beep-bop.mp3 > /dev/null 2>&1; }
 lb() {
     echo -ne "\033]30;lb ✍️\007"
