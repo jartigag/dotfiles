@@ -101,6 +101,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.proxys ]; then
+    . ~/.proxys
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -113,22 +117,4 @@ if ! shopt -oq posix; then
 fi
 
 # this allows ifconfig without sudo:
-export PATH=$PATH:/sbin
-
-## android ##
-export ANDROID_HOME="$HOME/Android"
-export PATH="${PATH}:${ANDROID_HOME}tools/bin:${ANDROID_HOME}tools/bin"
-# emulator: #
-export PATH="${PATH}:${ANDROID_HOME}tools:${ANDROID_HOME}tools"
-## flutter ##
-export PATH=$PATH:/home/javi/flutter/bin
-## node without sudo ##
-export PATH="$PATH:$HOME/npm/bin"
-export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
-
-# naudit:
-export PATH=$PATH:$HOME/svn/utils
-
-# elasticsearch and kibana:
-export PATH=$PATH:/usr/share/elasticsearch/bin
-export PATH=$PATH:/usr/share/kibana/bin
+export PATH="$PATH:/sbin"
