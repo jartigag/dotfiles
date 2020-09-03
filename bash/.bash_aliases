@@ -9,9 +9,21 @@ alias t2='tree -L 2'
 alarm() {
     echo "alarm on $(date -d "$1")"
     sleep $(( $(date -d "$1" +%s) - $(date +%s) ))
-    mplayer ~/alarms/beep-bop.mp3 > /dev/null 2>&1
+    if [ $(dpkg-query -W -f='${Status}' mplayer 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    then
+        sudo apt -y install mplayer
+    fi
+    mplayer ~/dotfiles/beep-bop.mp3 > /dev/null 2>&1
 }
 md () {
+    if [ $(dpkg-query -W -f='${Status}' pandoc 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    then
+        sudo apt -y install pandoc
+    fi
+    if [ $(dpkg-query -W -f='${Status}' lynx 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    then
+        sudo apt -y install lynx
+    fi
     pandoc $1 | lynx -stdin
 }
 bk () {
