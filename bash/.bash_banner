@@ -14,12 +14,18 @@ echo "$(tput setaf 2)
 `date +"%A, %e %B %Y, %r"`
 `uname -srmo`
 
-#(here, some things may be manually updated: wlp2s0, /dev/sda1...)
-
 Uptime.............: ${UPTIME}
 Memory.............: `awk '/MemFree/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo` MB / `awk '/MemTotal/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo` MB
 Load Averages......: ${one}, ${five}, ${fifteen} (1, 5, 15 min)
 Running Processes..: `ps ax | wc -l | tr -d " "`
-IP Addresses.......: `ifconfig wlp2s0 | grep "inet" | awk '{ print $2 }' | head -n 1` and `wget -q -O - http://icanhazip.com/ | tail`
-Free Disk Space....: `df -Pkh | grep -E '^/dev/sda1' | awk '{ print $4 }' | awk -F '.' '{ print $1 }'` on /dev/sda1 (`df -Pkh | grep -E '^/dev/sda1' | awk '{ print $5 }'` used)
+IP Addresses.......: `ifconfig wlan0 | grep "inet" | awk '{ print $2 }' | head -n 1` and `wget -q -O - http://icanhazip.com/ | tail`
+Free Disk Space....: `df -Pkh | grep -E '^/dev/root' | awk '{ print $4 }' | awk -F '.' '{ print $1 }'` on /dev/root (`df -Pkh | grep -E '^/dev/root' | awk '{ print $5 }'` used)
+SSH Attempts.......: last:               src_ip:         count:
+$(zgrep ssh /var/log/auth.log* | grep -iv disconnect | grep -iv server | awk '
+{for(f=1;f<=NF;f++){if($f ~ /^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/){count[$f]++;last[$f]=$1" "$2}}}
+END{for(i in count)printf "                     %s %s\t %i\n",last[i],i,count[i]}' | sort -nr)
 $(tput sgr0)"
+# in rsyslog.conf:
+# $template CustomFormat,"%timegenerated:::date-strftime(%Y-%m-%d %H:%M:%S)% %HOSTNAME% %syslogtag%%msg%0\n"
+# $ActionFileDefaultTemplate CustomFormat
+# so syslog format: 2020-09-04 19:45:55 sshd[410]: Accepted publickey for pi from 192.168.1.2...

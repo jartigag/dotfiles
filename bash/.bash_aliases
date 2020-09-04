@@ -1,6 +1,6 @@
 alias duh='du -h --max-depth=1 | sort -hr'
 function gitcl() { git clone $1 && cd $(basename $_ .git); }
-function gitcm() { git add .; git commit -m "$1"; git push origin master; }
+function gitcm() { git add .; git commit -m "$1"; git push origin; }
 alias open='xdg-open'
 alias aptl='apt list --upgradable'
 alias aptu='sudo apt upgrade'
