@@ -27,6 +27,7 @@ $(zgrep --no-filename ssh /var/log/auth.log* | grep -iv disconnect | grep -iv se
     last[$f]=$1" "$2;
     if($4=="Accepted") res[$f]=substr(res[$f],length(res[$f])-4,5)"+"
     if($4=="Failed")   res[$f]=substr(res[$f],length(res[$f])-4,5)"-"
+    if($4=="Invalid")   res[$f]=substr(res[$f],length(res[$f])-4,5)"."
 }}}
 END{for(i in res){
     printf "                     %s %s\t %i\t %s\n",last[i],i,count[i],res[i]
