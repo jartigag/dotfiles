@@ -20,12 +20,19 @@ Load Averages......: ${one}, ${five}, ${fifteen} (1, 5, 15 min)
 Running Processes..: `ps ax | wc -l | tr -d " "`
 IP Addresses.......: `ifconfig wlan0 | grep "inet" | awk '{ print $2 }' | head -n 1` and `wget -q -O - http://icanhazip.com/ | tail`
 Free Disk Space....: `df -Pkh | grep -E '^/dev/root' | awk '{ print $4 }' | awk -F '.' '{ print $1 }'` on /dev/root (`df -Pkh | grep -E '^/dev/root' | awk '{ print $5 }'` used)
-SSH Attempts.......: last:               src_ip:         count:
-$(zgrep ssh /var/log/auth.log* | grep -iv disconnect | grep -iv server | awk '
-{for(f=1;f<=NF;f++){if($f ~ /^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/){count[$f]++;last[$f]=$1" "$2}}}
-END{for(i in count)printf "                     %s %s\t %i\n",last[i],i,count[i]}' | sort -nr)
+SSH Attempts.......: last:               src_ip:         count:  results:
+$(zgrep --no-filename ssh /var/log/auth.log* | grep -iv disconnect | grep -iv server | awk '
+{for(f=1;f<=NF;f++){if($f ~ /^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/){
+    count[$f]++;
+    last[$f]=$1" "$2;
+    if($4=="Accepted") res[$f]=substr(res[$f],length(res[$f])-4,5)"+"
+    if($4=="Failed")   res[$f]=substr(res[$f],length(res[$f])-4,5)"-"
+}}}
+END{for(i in res){
+    printf "                     %s %s\t %i\t %s\n",last[i],i,count[i],res[i]
+}}' | sort -nr)
 $(tput sgr0)"
 # in rsyslog.conf:
-# $template CustomFormat,"%timegenerated:::date-strftime(%Y-%m-%d %H:%M:%S)% %HOSTNAME% %syslogtag%%msg%0\n"
+# $template myformat,"%TIMESTAMP:1:10:date-rfc3339% %TIMESTAMP:19:12:date-rfc3339% %syslogtag%%msg%\n"
 # $ActionFileDefaultTemplate CustomFormat
-# so syslog format: 2020-09-04 19:45:55 sshd[410]: Accepted publickey for pi from 192.168.1.2...
+# so syslog format: 2020-09-04 19:45:55 sshd[410]: Accepted publickey for pi from 192.168.1.1...
