@@ -18,10 +18,10 @@ Uptime.............: ${UPTIME}
 Memory.............: `awk '/MemFree/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo` MB / `awk '/MemTotal/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo` MB
 Load Averages......: ${one}, ${five}, ${fifteen} (1, 5, 15 min)
 Running Processes..: `ps ax | wc -l | tr -d " "`
-IP Addresses.......: `ifconfig wlan0 | grep "inet" | awk '{ print $2 }' | head -n 1` and `wget -q -O - http://icanhazip.com/ | tail`
+IP Addresses.......: `ifconfig wlan0 | grep "inet" | awk '{ print $2 }' | head -n 1` and `wget -q -timeout=0 -O - http://icanhazip.com/ | tail`
 Free Disk Space....: `df -Pkh | grep -E '^/dev/root' | awk '{ print $4 }' | awk -F '.' '{ print $1 }'` on /dev/root (`df -Pkh | grep -E '^/dev/root' | awk '{ print $5 }'` used)
 SSH Attempts.......: last:               src_ip:         count:  results:
-$(zgrep --no-filename ssh /var/log/auth.log* | grep -iv disconnect | grep -iv server | awk '
+$(grep --no-filename ssh /var/log/auth.log | grep -iv disconnect | grep -iv server | awk '
 {for(f=1;f<=NF;f++){if($f ~ /^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/){
     count[$f]++;
     last[$f]=$1" "$2;
@@ -31,7 +31,8 @@ $(zgrep --no-filename ssh /var/log/auth.log* | grep -iv disconnect | grep -iv se
 }}}
 END{for(i in res){
     printf "                     %s %s\t %i\t %s\n",last[i],i,count[i],res[i]
-}}' | sort -nr | head)
+}}' | sort -nr | head -3)
+(since `ls -l /var/log/auth.log.1 | awk '{print $6,$7,$8}'`)
 $(tput sgr0)"
 # in rsyslog.conf:
 # $template myformat,"%TIMESTAMP:1:10:date-rfc3339% %TIMESTAMP:19:12:date-rfc3339% %syslogtag%%msg%\n"
