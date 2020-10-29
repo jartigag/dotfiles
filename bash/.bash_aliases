@@ -29,3 +29,4 @@ md () {
 bk () {
     cp $1 $1.bak
 }
+alias tp='tareator ~/.tareator/tareas-personal.md'

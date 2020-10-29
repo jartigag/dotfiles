@@ -1,11 +1,8 @@
 #!/bin/bash
-# -*- coding: utf-8 -*-
+
 #author: @jartigag
-#date: 20/09/2019
-#version: 0.2
-#
-# install my configuration files (dotfiles)
-# usage: bash install.sh
+#date: 29/10/2019
+#version: 0.3
 #
 # minimals reminder:
 # sudo apt install git vim curl
@@ -13,21 +10,13 @@
 
 echo "let's install some dotfiles.."
 
-# 1. get all dotfiles into an array:
-# (adapting an example from http://mywiki.wooledge.org/BashGuide/Arrays)
-#dotfiles=()
-#while read -r -d $'\0'; do
-#       dotfiles+=("$REPLY")
-#done < <(find ./ -type f -name ".*")
-
 dotfiles=($(find `pwd` -type f -name ".*"))
 
-for i in ${!dotfiles[@]}
-        #The keys are accessed using an exclamation point: ${!array[@]},
-        #the values are accessed using ${array[@]}
-do
-                echo "cp ${dotfiles[$i]} $HOME"
-                        cp ${dotfiles[$i]} $HOME
-                done
+for key in ${!dotfiles[@]}; do
+    echo "ln -f ${dotfiles[$key]} $HOME"
+    ln -f ${dotfiles[$key]} $HOME
+done
 
-                echo "done."
+#TODO: ask for confirmation ([Y/n])
+
+echo "done."
