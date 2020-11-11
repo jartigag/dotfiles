@@ -30,3 +30,4 @@ bk () {
     cp $1 $1.bak
 }
 alias tp='tareator ~/.tareator/tareas-personal.md'
+alias tps='tareator ~/.tareator/tareas-personal.md -s'

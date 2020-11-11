@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #author: @jartigag
-#date: 29/10/2019
+#date: 29/10/2020
 #version: 0.3
 #
 # minimals reminder:

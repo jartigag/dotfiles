@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'jartigag/vim-logbook'
 Plug 'vitalk/vim-simple-todo'
-Plug 'mattn/emmet-vim'
+Plug 'mzlogin/vim-markdown-toc'
 
 call plug#end()
 
