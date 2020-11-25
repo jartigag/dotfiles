@@ -118,3 +118,5 @@ fi
 
 # this allows ifconfig without sudo:
 export PATH="$PATH:/sbin"
+export ANDROID_HOME="/home/javi/android-sdk/"
+export PATH="$PATH:/home/javi/flutter/bin/"
