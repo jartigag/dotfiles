@@ -1,12 +1,12 @@
 [user]
-	name = jartigag
-	email = jartigag@pm.me
+    name = jartigag
+    email = jartigag@pm.me
 [core]
-	editor = vim
+    editor = vim
 [color]
-	ui = auto
+    ui = auto
 [alias]
-	lg = log --graph --pretty --decorate --all
+    lg = log --graph --pretty --decorate --all
     lgs = log --graph --pretty=format:"%h%x09%C(yellow)%an%x09%Cred%ad%x09%Cgreen%d%x09%Creset%s" #%h=hash,%x09=tab,%an=authorname,%ad=authordate(on --date= format),%s=subject
     pl = pull origin master
     rs = reset --soft HEAD~1

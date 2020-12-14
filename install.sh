@@ -13,6 +13,8 @@ echo "let's install some dotfiles.."
 dotfiles=($(find `pwd` -type f -name ".*"))
 
 for key in ${!dotfiles[@]}; do
+    #TODO: from 'dotfiles/konsole/local-share-konsole-default dark.profile',
+    #      move to '$HOME/.local/share/konsole/default dark.profile'
     echo "ln -f ${dotfiles[$key]} $HOME"
     ln -f ${dotfiles[$key]} $HOME
 done

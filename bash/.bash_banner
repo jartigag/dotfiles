@@ -36,5 +36,5 @@ END{for(i in res){
 $(tput sgr0)"
 # in rsyslog.conf:
 # $template myformat,"%TIMESTAMP:1:10:date-rfc3339% %TIMESTAMP:19:12:date-rfc3339% %syslogtag%%msg%\n"
-# $ActionFileDefaultTemplate CustomFormat
+# $ActionFileDefaultTemplate myformat
 # so syslog format: 2020-09-04 19:45:55 sshd[410]: Accepted publickey for pi from 192.168.1.1...
