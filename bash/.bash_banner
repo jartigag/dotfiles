@@ -18,8 +18,8 @@ Uptime.............: ${UPTIME}
 Memory.............: `awk '/MemFree/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo` MB / `awk '/MemTotal/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo` MB
 Load Averages......: ${one}, ${five}, ${fifteen} (1, 5, 15 min)
 Running Processes..: `ps ax | wc -l | tr -d " "`
-IP Addresses.......: `ifconfig wlan0 | grep "inet" | awk '{ print $2 }' | head -n 1` and `wget -q -timeout=0 -O - http://icanhazip.com/ | tail`
-Free Disk Space....: `df -Pkh | grep -E '^/dev/root' | awk '{ print $4 }' | awk -F '.' '{ print $1 }'` on /dev/root (`df -Pkh | grep -E '^/dev/root' | awk '{ print $5 }'` used)
+IP Addresses.......: `ip --brief addr show dev wlo1 | awk '{print substr($3,1,length($3)-3)}'` and `wget -q -timeout=0 -O - http://icanhazip.com/ | tail`
+Free Disk Space....: `df -Pkh | grep '/$' | awk '{ print $4 }' | awk -F '.' '{ print $1 }'` on `df -Pkh | grep '/$' | awk '{ print $1 }'` (`df -Pkh | grep '/$' | awk '{ print $5 }'` used)
 SSH Attempts.......: last:               src_ip:         count:  results:
 $(grep --no-filename ssh /var/log/auth.log | grep -iv disconnect | grep -iv server | awk '
 {for(f=1;f<=NF;f++){if($f ~ /^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/){
