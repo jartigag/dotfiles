@@ -13,6 +13,7 @@ read one five fifteen rest < /proc/loadavg
 echo "$(tput setaf 2)
 `date +"%A, %e %B %Y, %r"`
 `uname -srmo`
+`lsb_release -d | cut -f 1 -d$'\t' --complement`
 
 Uptime.............: ${UPTIME}
 Memory.............: `awk '/MemFree/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo` MB / `awk '/MemTotal/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo` MB
