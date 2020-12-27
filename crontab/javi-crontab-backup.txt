@@ -21,5 +21,5 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 #
 # m h  dom mon dow   command
-45  0-8  * * * cd /home/javi/b && git add .; git commit -m "$( date +\%F )"; git push
-45 17-23 * * * cd /home/javi/b && git add .; git commit -m "$( date +\%F )"; git push
+45  0-8  * * *   ~/b/bak.sh
+45 17-23 * * *   ~/b/bak.sh

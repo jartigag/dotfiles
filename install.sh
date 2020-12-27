@@ -21,4 +21,6 @@ done
 
 #TODO: ask for confirmation ([Y/n])
 
+#TODO: crontab/bak.sh: ~/b/ structure, ~/b/ln.sh, restore ~/b/repos.txt
+
 echo "done."
