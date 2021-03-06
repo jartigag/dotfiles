@@ -29,7 +29,7 @@ md () {
 bk () {
     cp $1 $1.bak
 }
-alias tp='tareator ~/.tareator/tareas-personal.md'
+alias tp='tareator ~/.tareator/tareas-personal.md register2echo'
 alias tt='tareator ~/.tareator/tareas-naudit.md'
-alias tps='tareator ~/.tareator/tareas-personal.md -s'
+alias tps='tareator ~/.tareator/tareas-personal.md -s register2echo'
 alias tts='tareator ~/.tareator/tareas-naudit.md -s'

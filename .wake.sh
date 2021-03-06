@@ -1,13 +1,12 @@
-#!/usr/bin/env bash
-# -*- coding: utf-8 -*-
+#!/bin/bash
 #author: @jartigag
-#date: 2019-05-05
-#version: 0.2
+#date: 2020-12-27
+#version: 1.0
 #
 # it uses a Wake-on-LAN utility (`sudo apt install etherwake`)
-# to turn a host and login into it with ssh.
+# to turn a host on and login into it with ssh.
 #
-#usage: bash wake.sh -m y0:ur:m4c:4d:dr:3s -i 192.168.1.10 -u myUserOnThatHost
+#usage: bash .wake.sh -m y0:ur:m4c:4d:dr:3s -i 192.168.1.10 -u myUserOnThatHost
 
 n_secs=70
 n_pings=10
@@ -21,17 +20,14 @@ do                       #place ':' after the proper option flag.
 	esac
 done
 
-echo "running.."
-sudo etherwake -i eth0 $mac
-echo "$mac is waking.."
+echo "running etherwake to send magic packet (it needs sudo).."
+sudo etherwake -i wlo1 $mac
+echo "now $mac is waking.."
 
-echo "waiting for $mac for $n_secs seconds.."
-sleep $(($n_secs/2))
-echo "(es de despertar perezoso, ya ves tú..😜)"
-sleep $(($n_secs/2))
+echo "waiting for $n_secs seconds.."
+sleep $n_secs
 
 echo "pinging to $ip $n_pings times.."
-
 ((count = $n_pings))          # Maximum number to try.
 while [[ $count -ne 0 ]] ; do
     ping -c 1 $ip > /dev/null # Try once.
@@ -42,6 +38,7 @@ while [[ $count -ne 0 ]] ; do
     ((count = count - 1))     # So we don't go forever.
 
 done
+
 if [[ $resp -eq 0 ]] ; then   # Make final determination.
     echo "$ip is awake"
     if [[ -n $ssh_user ]]; then
