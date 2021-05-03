@@ -116,6 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Ctrl+R searches backwards through your history. To search forward instead with Ctrl+S, (https://unix.stackexchange.com/a/73499)
+stty -ixon
+
 # this allows ifconfig without sudo:
 export PATH="$PATH:/sbin"
 ## android ##
