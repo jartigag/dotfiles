@@ -1,3 +1,5 @@
+set encoding=utf-8
+
 " Set custom leader keys. The leader keys has to be set before plugins has
 " been loaded
 let mapleader='º'
@@ -5,7 +7,6 @@ let maplocalleader='\'
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'jartigag/vim-logbook'
 Plug 'vitalk/vim-simple-todo'
 Plug 'mzlogin/vim-markdown-toc'
 
@@ -40,7 +41,7 @@ autocmd BufWinLeave * call clearmatches()
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Clear trailing spaces on <F2>
-function TrimWhiteSpace() "TODO: apply just on visual selection
+function TrimWhiteSpace()
   %s/\s*$//
   ''
 :endfunction
@@ -66,5 +67,9 @@ endif
 endfunction
 
 noremap zA :call UnrolMe()<CR>
+" UnrolSelection: zO
 
 set tabpagemax=100
+
+" Show completion in a menu
+set wildmenu
