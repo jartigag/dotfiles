@@ -34,7 +34,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec .local/kitty.app/bin/kitty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -174,8 +174,16 @@ for_window [class="krunner"] floating enable; border none
 for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
-for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"]
 for_window [title="Escritorio — Plasma"] kill; floating enable; border none
 for_window [title="Plasma"] kill; floating enable; border none
+
+exec --no-startup-id xsetroot -solid "#111111"
+
+exec_always alttab
+
+bindsym Mod1+f exec firefox
+bindsym Mod1+g exec google-chrome
+bindsym Mod1+c exec chromium
+bindsym Mod1+t exec telegram-desktop
