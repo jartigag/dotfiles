@@ -177,9 +177,9 @@ for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"]
 for_window [title="Escritorio — Plasma"] kill; floating enable; border none
-for_window [title="Plasma"] kill; floating enable; border none
 
 exec --no-startup-id xsetroot -solid "#111111"
+exec --no-startup-id compton -b -f
 
 exec_always alttab
 

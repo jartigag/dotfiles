@@ -33,3 +33,4 @@ alias tp='tareator ~/b/tareator/tareas-personal.md register2echo'
 alias tt='tareator ~/b/tareator/tareas-naudit.md'
 alias tps='tareator ~/b/tareator/tareas-personal.md -s register2echo'
 alias tts='tareator ~/b/tareator/tareas-naudit.md -s'
+alias ssh="kitty +kitten ssh"
