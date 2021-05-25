@@ -1,0 +1,69 @@
+general {
+        colors = true
+        color_good =     "#a3be8c"
+        color_bad =      "#bf616a"
+        color_degraded = "#d08770"
+        output_format = "i3bar"
+        interval = 1
+}
+
+order += "sysdata"
+order += "disk /"
+order += "wireless wlo1"
+order += "ethernet eno2"
+order += "battery 0"
+#order += "cpu_temperature 0"
+order += "volume master"
+order += "time"
+
+#TODO: bluetooth
+#TODO: kdeconnect
+#TODO: spectacle shortcut
+#TODO: call kde bar
+
+sysdata {
+    #TODO: CPU: 0% 15% 0% 15% 0% 15% 0% 15% 0% 15%, Mem: 2.26/7.61 GB (30%)
+}
+
+disk "/" {
+        format = "%free/%total"
+}
+
+wireless wlo1 {
+        format_up = "W: %ip (%essid%quality)" #, %bitrate
+        format_down = "W: down"
+        on_click 1 = "exec /usr/bin/kcmshell5 kcm_networkmanagement.desktop"
+}
+
+ethernet eno2 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "E: %ip" # (%speed)
+        format_down = "E: down"
+        on_click 1 = "exec /usr/bin/kcmshell5 kcm_networkmanagement.desktop"
+}
+
+battery 0 {
+        format = "%status %percentage"
+        format_down = "No battery"
+        status_chr = "⚡CHR"
+        status_bat = "🔋BAT"
+        status_unk = "?UNK"
+        status_full = "☻FULL"
+        low_threshold = 10
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+}
+
+volume master {
+        format = "Vol:%volume"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+time {
+        format = "%a %m-%m-%Y %H:%M:%S"
+        on_click 1 = "exec plasmawindowed org.kde.plasma.calendar"
+}
