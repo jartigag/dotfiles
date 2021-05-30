@@ -175,7 +175,8 @@ for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="plasmawindowed"] floating enable; border none
-for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
+#for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
+for_window [class="plasmashell" window_type="notification"] border none, move position 1600 60;
 no_focus [class="plasmashell" window_type="notification"]
 for_window [title="Escritorio — Plasma"] kill; floating enable; border none
 
@@ -183,8 +184,3 @@ exec --no-startup-id xsetroot -solid "#111111"
 exec --no-startup-id compton -b -f
 
 exec_always alttab
-
-bindsym Mod1+f exec firefox
-bindsym Mod1+g exec google-chrome
-bindsym Mod1+c exec chromium
-bindsym Mod1+t exec telegram-desktop

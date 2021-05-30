@@ -16,17 +16,12 @@ order += "battery 0"
 order += "volume master"
 order += "time"
 
-#TODO: bluetooth
-#TODO: kdeconnect
-#TODO: spectacle shortcut
-#TODO: call kde bar
-
 sysdata {
     #TODO: CPU: 0% 15% 0% 15% 0% 15% 0% 15% 0% 15%, Mem: 2.26/7.61 GB (30%)
 }
 
 disk "/" {
-        format = "%free/%total"
+        format = "%used/%total"
 }
 
 wireless wlo1 {
