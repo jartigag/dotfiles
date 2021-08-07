@@ -14,9 +14,8 @@ dst=${1:-"/media/javi/jag32GB/key.7z"}
 src=(".gnupg/" ".password-store/" ".ssh/" ".proxys")
 
 cp $dst $dst.bak
-rm $dst
-
 mkdir -p /tmp/key/
+
 for d in ${src[@]}
 do
     cp -r $HOME/$d /tmp/key/${d//.}
@@ -24,5 +23,6 @@ do
 done
 
 cd /tmp/
-7z a -mhe $dst key/* -p
+rm $dst
+7z a -mhe $dst key/* -p"$1"
 rm -r key/

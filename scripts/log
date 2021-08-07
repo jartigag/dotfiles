@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "[+] decrypting.."
+gpg -d --quiet --output ~/.log.uncrpt ~/bak/log.gpg
+
+echo "
+$(date "+%A, %-d de %B de %Y")
+----------" | iconv -f utf8 -t iso-8859-1 >> ~/.log.uncrpt
+vim +$                  ~/.log.uncrpt
+
+echo "[+] encrypting.."
+gpg -c         --output ~/bak/log.gpg ~/.log.uncrpt
+
+echo "[+] backing up.."
+7z   a -mhe -sdel       ~/.log.7z     ~/.log.uncrpt -p
