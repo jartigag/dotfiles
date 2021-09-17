@@ -6,6 +6,7 @@ alias aptl='apt list --upgradable'
 alias aptu='sudo apt upgrade'
 alias t1='tree -L 1'
 alias t2='tree -L 2'
+alias cdt='cd $(date +%Y-%m-%d)*' # cd today's dir
 alarm() {
     echo "alarm on $(date -d "$1")"
     sleep $(( $(date -d "$1" +%s) - $(date +%s) ))
@@ -30,8 +31,5 @@ bk () {
     cp $1 $1.bak
 }
 alias tp='tareator ~/b/tareator/tareas-personal.md register2echo'
-alias tt='tareator ~/b/tareator/tareas-naudit.md'
 alias tps='tareator ~/b/tareator/tareas-personal.md -s register2echo'
-alias tts='tareator ~/b/tareator/tareas-naudit.md -s'
 alias ssh="kitty +kitten ssh"
-alias cdt='cd $(date +%Y-%m-%d)*' # cd today's dir
