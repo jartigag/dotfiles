@@ -34,3 +34,4 @@ alias tt='tareator ~/b/tareator/tareas-naudit.md'
 alias tps='tareator ~/b/tareator/tareas-personal.md -s register2echo'
 alias tts='tareator ~/b/tareator/tareas-naudit.md -s'
 alias ssh="kitty +kitten ssh"
+alias cdt='cd $(date +%Y-%m-%d)*' # cd today's dir
