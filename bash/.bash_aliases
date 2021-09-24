@@ -7,6 +7,7 @@ alias aptu='sudo apt upgrade'
 alias t1='tree -L 1'
 alias t2='tree -L 2'
 alias cdt='cd $(date +%Y-%m-%d)*' # cd today's dir
+function mkdirt() { mkdir $(date +%Y-%m-%d)-$1; }
 alarm() {
     echo "alarm on $(date -d "$1")"
     sleep $(( $(date -d "$1" +%s) - $(date +%s) ))
