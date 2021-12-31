@@ -1,0 +1,67 @@
+[chromium.desktop][Global Shortcuts]
+_launch=Alt+C
+
+[code.desktop][Global Shortcuts]
+_launch=Alt+V
+
+[discord.desktop][Global Shortcuts]
+_launch=Alt+Z
+
+[firefox-esr.desktop][Global Shortcuts]
+_launch=Alt+F
+
+[google-chrome.desktop][Global Shortcuts]
+_launch=Alt+R
+new-private-window=Alt+Shift+R
+
+[kitty.desktop][Global Shortcuts]
+_launch=Meta+Return
+
+[kwin][Global Shortcuts]
+Show Desktop=Meta+D
+Switch One Desktop to the Left=Meta+Ctrl+Left
+Switch One Desktop to the Right=Meta+Ctrl+Right
+Switch Window Down=Meta+Alt+Down
+Switch Window Left=Meta+Alt+Left
+Switch Window Right=Meta+Alt+Right
+Switch Window Up=Meta+Alt+Up
+Walk Through Windows=Alt+Tab
+Walk Through Windows (Reverse)=Alt+Shift+Backtab
+indow Close=Meta+Shift+Q; Alt+F4
+Window Maximize=Meta+PgUp; Meta+M
+Window Minimize=Meta+N; Meta+PgDown
+Window Quick Tile Bottom=Meta+Down
+Window Quick Tile Right=Meta+Right
+Window Quick Tile Top=Meta+Up
+view_actual_size=Meta+0
+view_zoom_in=Meta++; Meta+=
+view_zoom_out=Meta+-
+
+[mediacontrol][Global Shortcuts]
+nextmedia=Shift+End; Media Next
+playpausemedia=Media Play; Shift+Ins
+previousmedia=Media Previous; Shift+Home
+stopmedia=Media Stop
+
+[obsidian.desktop][Global Shortcuts]
+_launch=Alt+O
+
+[org.kde.dolphin.desktop][Global Shortcuts]
+_launch=Alt+D
+
+[org.kde.plasma.emojier.desktop][Global Shortcuts]
+_launch=Meta+.
+
+[org.kde.spectacle.desktop][Global Shortcuts]
+ActiveWindowScreenShot=Meta+Print
+FullScreenScreenShot=Shift+Print
+RectangularRegionScreenShot=Meta+Shift+Print; Meta+Shift+S
+
+[spotify.desktop][Global Shortcuts]
+_launch=Alt+S
+
+[sublime_text.desktop][Global Shortcuts]
+_launch=Alt+X
+
+[telegramdesktop.desktop][Global Shortcuts]
+_launch=Alt+T
