@@ -119,12 +119,9 @@ fi
 # Ctrl+R searches backwards through your history. To search forward instead with Ctrl+S, (https://unix.stackexchange.com/a/73499)
 stty -ixon
 
-# this allows ifconfig without sudo:
-export PATH="$PATH:/sbin"
-## android ##
-export ANDROID_HOME="/usr/lib/android-sdk/"
-export PATH="${PATH}:${ANDROID_HOME}tools/bin:${ANDROID_HOME}tools/bin"
+export PATH="$PATH:/sbin" # this allows ifconfig without sudo
+export PATH="$PATH:/home/javi/.local/bin" # python's pip installing locally
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+## android ##
+#export ANDROID_HOME="/usr/lib/android-sdk/"
+#export PATH="${PATH}:${ANDROID_HOME}tools/bin:${ANDROID_HOME}tools/bin"

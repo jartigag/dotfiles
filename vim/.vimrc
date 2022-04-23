@@ -1,4 +1,5 @@
 set encoding=utf-8
+set clipboard=unnamedplus " sudo apt install vim-gtk3
 
 " Set custom leader keys. The leader keys has to be set before plugins has
 " been loaded
