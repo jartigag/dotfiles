@@ -26,3 +26,4 @@ alarm() {
     fi
     mplayer ~/dotfiles/beep-bop.mp3 > /dev/null 2>&1
 }
+alias newss='newsboat -u ~/.newsboat/sec_feeds -c ~/.newsboat/cache_sec'
