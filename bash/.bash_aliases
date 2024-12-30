@@ -8,7 +8,7 @@ alarm() {
     then
         sudo apt -y install mplayer
     fi
-    mplayer ~/dotfiles/beep-bop.mp3 > /dev/null 2>&1
+    mplayer ~/g/dotfiles/beep-bop.mp3 > /dev/null 2>&1
 }
 gitcl(){ git clone $1 && cd $(basename $_ .git);}
-gitcm(){ git add -A;git commit -m"${1:.}";git push;}
+gitcm(){ git add -A;git commit -m "${1:-.}";git push;}
