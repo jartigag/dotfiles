@@ -1,20 +1,24 @@
-[user]
-  name = jartigag
-  email = javier@artiga.es
-[init]
-  defaultBranch = main
 [alias]
     lg = log --graph --pretty --decorate --all
-    #lgs = log --graph --pretty=format:"%h%x09%C(yellow)%an%x09%Cred%ad%x09%Cgreen%d%x09%Creset%s" #%h=hash,%x09=tab,%an=authorname,%ad=authordate(on --date= format),%s=subject
     lgs = log --graph --pretty=format:"%h%x09%C(yellow)%an%x09%Cred%ad%x09%Creset%s%Cgreen%d" #%h=hash,%x09=tab,%an=authorname,%ad=authordate(on --date= format),%s=subject
     pl = pull origin
     rs = reset --soft HEAD~1
     st = status
     df = diff
     ch = checkout -- .
-[pull]
-    ff = only
+[core]
+  autocrlf = false
 [diff "ISO-8859-1"]
     textconv = "iconv -f ISO-8859-1 -t utf-8"
+[gpg]
+  format = ssh
+[init]
+  defaultBranch = main
+[pull]
+    ff = only
 [status]
     submoduleSummary = true
+[user]
+    email = javi@artiga.es
+    name = jartigag
+    signingkey = /mnt/c/Users/javi/.ssh/id_ed25519-jartigag.pub
